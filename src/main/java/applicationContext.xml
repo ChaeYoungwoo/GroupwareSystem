@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--com.pcwk.ehr.user.NConnectionMaker 생성 -->
+    <!--어노테이션으로 치면 component같은 느낌 -->
+    <bean id = "connectionMaker" class="com.pcwk.ehr.user.NConnectionMaker"></bean>
+    
+    <bean id = "userDao" class ="com.pcwk.ehr.user.UserDao">
+        <property name = "connectionMaker" ref="connectionMaker"></property>
+    </bean>
+</beans>
